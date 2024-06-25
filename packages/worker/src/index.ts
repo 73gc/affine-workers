@@ -3,7 +3,7 @@ import { DomainRouterBuilder, domainRoutersHandler } from '@affine/utils';
 import { AFFiNEWorker } from './affine.js';
 import type { Env } from './types.js';
 
-const WORKER_DOMAIN = 'affine-worker.toeverything.workers.dev';
+const WORKER_DOMAIN = 'affine-worker.eikaramba.workers.dev';
 
 const affine = AFFiNEWorker();
 
