@@ -3,7 +3,7 @@
 # For information about possible options have a look at the code:
 # https://github.com/zaripych/refactor-bot/blob/main/src/refactor/types.ts#L5
 budgetCents: 200
-model: gpt-4o
+model: gpt-4
 ```
 
 this repository is currently using cloudflare workers. rewrite it so that it just works on a plain node.js server single instance. do not use cloudflare workers. i should be able to deploy it to a single instance of a node.js server via a dockerfile. to give you an example of the link-preview endpoint, here is the response for the url https://www.heise.de/ratgeber/Kuehlen-mit-der-Waermepumpe-Wenn-die-Fussbodenheizung-Kaelte-liefert-9769544.html?wt_mc=rss.red.ho.ho.rdf.beitrag_plus.beitrag_plus"
