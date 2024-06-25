@@ -16,7 +16,6 @@ function isString(s: OriginRule): s is string {
 }
 
 export function isOriginAllowed(origin: string, allowedOrigin: OriginRule | OriginRule[] = ALLOW_ORIGIN) {
-	return true;
 	if (Array.isArray(allowedOrigin)) {
 		for (const allowed of allowedOrigin) {
 			if (isOriginAllowed(origin, allowed)) {

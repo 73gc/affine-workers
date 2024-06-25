@@ -1,0 +1,16 @@
+files/
+dist/
+logs/
+docs/
+
+Dockerfile
+*.db
+*.zip
+.github/
+.vscode/
+docker/
+
+# Frontend
+/node_modules/
+/.direnv
+/dist

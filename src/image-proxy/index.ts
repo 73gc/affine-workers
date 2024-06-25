@@ -1,7 +1,6 @@
-import { cloneHeader, fixUrl, isOriginAllowed, isRefererAllowed, log, respBadRequest, respNotFound } from '@affine/utils';
-import type { IRequest } from 'itty-router';
+import { cloneHeader, fixUrl, isOriginAllowed, isRefererAllowed, log, respBadRequest, respNotFound } from '../utils';
 
-export async function imageProxy(request: IRequest) {
+export async function imageProxy(request: any) {
 	const origin = request.headers.get('Origin') ?? '';
 	const referer = request.headers.get('Referer') ?? '';
 	if (!isOriginAllowed(origin) && !isRefererAllowed(referer)) {
