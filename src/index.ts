@@ -1,10 +1,13 @@
 import express, { Request, Response } from 'express';
 import axios from 'axios';
 import { linkPreview } from './link-preview';
+import cors from 'cors';
 
 const app = express();
 app.use(express.json())
 
+const allowedOrigins = ['https://notes.eikaramba.de'];
+app.use(cors({ origin: allowedOrigins }));
 app.post('/link-preview', async (req: Request, res: Response) => {
     try {
         const { url } = req.body;
