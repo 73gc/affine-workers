@@ -54,7 +54,6 @@ export async function linkPreview(requestUrl: string) {
 
   dom.window.document.querySelectorAll('link[rel*="icon"]').forEach(link => {
     const href = link.getAttribute('href');
-    console.log(href);
     if (href) appendUrl(href, res.favicons);
   });
 
