@@ -6,8 +6,17 @@ import cors from 'cors';
 const app = express();
 app.use(express.json())
 
-const allowedOrigins = ['https://notes.eikaramba.de'];
-app.use(cors({ origin: allowedOrigins }));
+const customCorsOptions: cors.CorsOptions = {
+    origin: (origin, callback) => {
+        const allowedOrigins = process.env.HOST_NAMES?.split(',') || [];
+        if (allowedOrigins.indexOf(origin ?? "") !== -1) {
+            callback(null, true);
+        } else {
+            callback(new Error("Request from unauthorized origin"), false);
+        }
+    },
+};
+app.use(cors(customCorsOptions));
 app.post('/link-preview', async (req: Request, res: Response) => {
     try {
         const { url } = req.body;
