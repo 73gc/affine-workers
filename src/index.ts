@@ -17,7 +17,7 @@ const customCorsOptions: cors.CorsOptions = {
     },
 };
 app.use(cors(customCorsOptions));
-app.post('/link-preview', async (req: Request, res: Response) => {
+app.all('/link-preview', async (req: Request, res: Response) => {
     try {
         const { url } = req.body;
         const preview: any = await linkPreview(url);
@@ -27,7 +27,7 @@ app.post('/link-preview', async (req: Request, res: Response) => {
     }
 });
 
-app.post('/image-proxy', async (req: Request, res: Response) => {
+app.all('/image-proxy', async (req: Request, res: Response) => {
     try {
         const { url } = req.query;
         const response = await axios.get(url as string, { responseType: 'stream' });
